@@ -13,7 +13,7 @@ import Write from './components/Write';
 import About from './pages/About';
 import './App.css';
 function App() {
-  const user =true;
+  const user =false;
   // const [user,setUser] =useState(null)
   return (
     // <BrowserRouter>  
