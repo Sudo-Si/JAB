@@ -342,9 +342,9 @@ color: yellow;
   color: white;
   font-size: 18px;
   line-height: 25px;
-  text-align: justify; /* For Edge */
-  -moz-text-align-last: justify; /* For Firefox prior 58.0 */
-  text-align-last: justify;
+  text-align: justify; /*For Edge*/
+  -moz-text-align-last: justify; /*For Firefox prior 58.0*/
+  /* text-align-last: justify; */
 }
 .singlePostDesc::first-letter{
 margin-left: 20px;

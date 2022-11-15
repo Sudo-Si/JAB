@@ -1,48 +1,42 @@
-import React from 'react'
-import image from '../images/Tech.png'
+// import React from 'react'
+import {useLocation} from 'react-router'
+import {useEffect, useState} from 'react'
+import image from '../images/Tech.png';
+import axios from 'axios';
+import { Link } from "react-router-dom";
+
+
 export default function SinglePost() {
+  const location = new useLocation();
+ const path = location.pathname.split("/")[2];
+ const [post, setPost] = useState([])
+ useEffect(()=>{
+  const getPost = async ()=>{
+    const res = await axios.get("/posts/"+ path);
+    setPost(res.data);
+  };
+  getPost()
+ },[path])
   return (
 
-    <><div classnaName="singlePost">
+    <div classnaName="singlePost">
        <div className="singlePostWrapper">
-        <img className='singlePageImg' src={image} alt=""/>
-        <h1 className="singlePostTitle"> A post about Tech.
+        
+        {post.photo &&(<img className='singlePageImg' src={post.photo} alt=""/>)}
+
+        <h1 className="singlePostTitle"> {post.title}</h1>
         <div className="singlePostEdit">  <i class="singlePostIcon fa-solid fa-pen-to-square"></i> <i class="singlePostIcon fa-solid fa-trash"></i></div>
-        </h1>
+        
         <div className="singlePostInfo"> 
-        <span className="singlePostAuthor"> Author: <b>Sudo-Si</b></span>
-        <span className="singlePostDate"><em>1 hour ago</em> </span>
+        <span className="singlePostAuthor"> Author:<Link className ="lnk" to={`/?user=${post.username}`}><b>{post.username}</b></Link> </span>
+        <span className="singlePostDate"><em>{new Date(post.createdAt).toDateString()} </em> </span>
         </div>
 
-        <p className="singlePostDesc">  
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-        tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis 
-        nunc sed id. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. 
-        Laoreet non curabitur gravida arcu. Amet massa vitae tortor condimentum. Sapien 
-        eget mi proin sed libero enim. Molestie at elementum eu facilisis. Ultricies leo 
-        integer malesuada nunc vel risus commodo viverra maecenas. 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-        tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis 
-        nunc sed id. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. 
-        Laoreet non curabitur gravida arcu. Amet massa vitae tortor condimentum. Sapien 
-        eget mi proin sed libero enim. Molestie at elementum eu facilisis. Ultricies leo 
-        integer malesuada nunc vel risus commodo viverra maecenas. 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-        tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis 
-        nunc sed id. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. 
-        Laoreet non curabitur gravida arcu. Amet massa vitae tortor condimentum. Sapien 
-        eget mi proin sed libero enim. Molestie at elementum eu facilisis. Ultricies leo 
-        integer malesuada nunc vel  
-        integer malesuada nunc vel risus commodo viverra maecenas. 
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-        tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis 
-        nunc sed id. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. 
-        Laoreet non curabitur gravida arcu. Amet massa vitae tortor condimentum. Sapien 
-        eget mi proin sed libero enim. Molestie at elementum eu.
+        <p className="singlePostDesc">  {post.desc}
         </p>
        </div>
       </div>
-      </>
+     
 
   )
 }

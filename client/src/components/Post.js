@@ -1,45 +1,40 @@
-import React from 'react'
+// import React from 'react'
 import { Link } from 'react-router-dom'
 import programming from'../images/Programming.png'
+import post from "./Posts"
 
 
-export default function Post() {
+export default function Post({post}) {
+  // console.log(posts.title)
   return (
     <div className='post'>
+      {
+        post.photo &&(
+          <Link to={`/post/${post._id}`} className="lnk" >     
+       <img className='postImg' src={programming}  />
+       </Link>
+        )
+      }
       {/* <h1>Hi Si</h1> */}
-      <Link to='/post/5156' className="lnk" >      <img className='postImg' src={programming}  /></Link>
+   
 
       <div className="postInfo">
             <div className='postCats'>
-                <span className='postCat'>music</span>
-                <span className='postCat'>Life</span>
+         {post.categories.map(c=>(
+              <span className='postCat'>{c.name}</span>
+            ))
+            }
+                
             </div>
             <span className='postTitle'> 
-            <Link to='/post/5156' className="lnk" > 
-            My Post
+            <Link to={`/post/${post._id}`} className="lnk" > 
+           { post.title}
             </Link> 
             </span>
             <hr/>
-            <span className='postDate'> 1 hour ago </span>
-            <p className='postDescription'> 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-    tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis 
-    nunc sed id. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. 
-    Laoreet non curabitur gravida arcu. Amet massa vitae tortor condimentum. Sapien 
-    eget mi proin sed libero enim. Molestie at elementum eu facilisis. Ultricies leo 
-    integer malesuada nunc vel risus commodo viverra maecenas. 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-    tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis 
-    nunc sed id. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. 
-    Laoreet non curabitur gravida arcu. Amet massa vitae tortor condimentum. Sapien 
-    eget mi proin sed libero enim. Molestie at elementum eu facilisis. Ultricies leo 
-    integer malesuada nunc vel risus commodo viverra maecenas. 
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-    tempor incididunt ut labore et dolore magna aliqua. Amet nisl purus in mollis 
-    nunc sed id. Sagittis nisl rhoncus mattis rhoncus urna neque viverra justo nec. 
-    Laoreet non curabitur gravida arcu. Amet massa vitae tortor condimentum. Sapien 
-    eget mi proin sed libero enim. Molestie at elementum eu facilisis. Ultricies leo 
-    integer malesuada nunc vel risus commodo viverra maecenas. 
+            <span className='postDate'>{new Date(post.createdAt).toDateString()} </span>
+            <p className='postDescription'> {post.desc}
+     
          
     </p>
       </div>
