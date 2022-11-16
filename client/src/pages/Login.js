@@ -1,25 +1,14 @@
 // import {useState} from 'react';
 import{ Link} from 'react-router-dom';
 const  Login =()=>{
-    // const [name, setName]= useState('');
-    // const [email, setEmail]= useState('');
 
-    // const navigate = useNavigate();
-
-    // const handleSubmit = async (e) =>{
-    //     e.preventDefault();
-    //     if(!name || !email) return;
-    //     setUser({name:name, email:email});
-    //     navigate('/dashboard');
-    //     // console.log(name, email);
-    // };
     return( 
     <div className="login"> 
     <span className="loginTitle"> Login</span>
              <form className='loginForm'>
          
                 <label >  Email</label>
-            <input className="loginInput" type="email" placeholder='email' />
+            <input className="loginInput" type="email" placeholder='username' />
                 <label >  Password</label>
             <input className="loginInput" type="password" placeholder='password' />
             <button className='loginButton'>Login</button>
