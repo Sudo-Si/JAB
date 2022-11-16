@@ -1,6 +1,5 @@
 import {useState} from 'react';
 import axios from 'axios'
-// import{ useNavigate} from 'react-router-dom';
 import{ Link} from 'react-router-dom';
 const  Register =()=>{
 
@@ -52,41 +51,6 @@ const  Register =()=>{
     <Link to='/login' className="lnk" > Login</Link> 
 </button>
 
-
-
-
-
-
-
-
-
-
-
-
-        {/* this needs to be refactored */}
-  {/*      <form className="form" onSubmit ={handleSubmit}>
-        
-        // <h1>Register</h1>
-        //   <label htmlFor="username"> username</label>
-        //     <div className="form-row">
-           
-        //     <input type='text' className='form-input' id='name'
-        //         value={name}
-        //         onChange={(e)=> setName(e.target.value)}
-        //     />     
-        //     </div>     <label htmlFor="email"> email</label>
-        //     <div className="form-row">
-           
-        //     <input type='text' className='form-input' id='email'
-        //         value={email}
-        //         onChange={(e)=> setEmail(e.target.value)}
-        //     />     
-        //     </div>
-         
-        //     <button type="">Register</button>
-            
-            
-        </form> */}
     </div>
     )
 }

@@ -1,18 +1,7 @@
-// import {useState} from 'react';
+
 import{ Link} from 'react-router-dom';
 const  Login =()=>{
-    // const [name, setName]= useState('');
-    // const [email, setEmail]= useState('');
 
-    // const navigate = useNavigate();
-
-    // const handleSubmit = async (e) =>{
-    //     e.preventDefault();
-    //     if(!name || !email) return;
-    //     setUser({name:name, email:email});
-    //     navigate('/dashboard');
-    //     // console.log(name, email);
-    // };
     return( 
     <div className="login"> 
     <span className="loginTitle"> Login</span>
