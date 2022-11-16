@@ -9,13 +9,14 @@ import Single from './pages/Single';
 import Settings from './pages/Settings';
 import Register from './pages/Register';
 import Write from './components/Write';
-import About from './pages/About';
+import About from './pages/About';  
+  import { ContextProvider } from './context/Context';
 import './App.css';
 function App() {
   const user =false;
   // const [user,setUser] =useState(null)
   return (
-
+ <ContextProvider> 
    <BrowserRouter>
       <Routes>
      <Route exact path='/' element={<SharedLayout />}>
@@ -23,14 +24,16 @@ function App() {
          <Route path='/about' element={<About/>} />
          <Route path='/write' element={user ? <Write/>: <Login/>} />
          <Route path='/register' element={user ?< Home/>: <Register/>}/>
-  
-         <Route path='/settings' element={user ? <Settings/>:<Register/>} />
+        <Route path='/settings' element={user ? <Settings/>:<Register/>} />
          <Route path='/login' element={user ?< Home/>: <Login />} />  
          <Route path='*' element={<Error/>} /> 
          <Route path='/post/:postId' element={<Single/>} />
         </Route>
 </Routes>
    </BrowserRouter>
+      
+
+     </ContextProvider> 
   );
 }
 

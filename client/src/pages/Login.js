@@ -1,17 +1,49 @@
-
+import { useContext, useRef } from 'react';
+import axios from 'axios'
 import{ Link} from 'react-router-dom';
-const  Login =()=>{
+import { Context } from '../context/Context';
+export default function   Login (){
+   const userRef = useRef();
+        const passwordRef = useRef();
+        const {dispatch, isfetching, user} 
+        = useContext(Context)
 
+    const handleSubmit = async (e) =>{
+        e.preventDefault();
+        dispatch({ type: "LOGIN_START" });
+      try{  
+        const res = await axios.post("/auth/login", {
+            username:userRef.current.value, 
+            password:passwordRef.current.value,
+        });
+          
+        dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+        }catch(err){ 
+            dispatch({type:"LOGIN_FAILURE"});
+        }
+        
+    };
+  console.log(user);
     return( 
     <div className="login"> 
     <span className="loginTitle"> Login</span>
-             <form className='loginForm'>
+             <form className='loginForm' onSubmit={handleSubmit}>
          
-                <label >  Email</label>
-            <input className="loginInput" type="email" placeholder='username' />
+                <label >  Username</label>
+            <input 
+            className="loginInput" 
+            type="text" 
+            placeholder='username' 
+            ref ={userRef}
+            />
                 <label >  Password</label>
-            <input className="loginInput" type="password" placeholder='password' />
-            <button className='loginButton'>Login</button>
+            <input 
+            className="loginInput" 
+            type="password" 
+            placeholder='password'
+            ref ={passwordRef} 
+              />
+            <button className='loginButton' type="submit">Login</button>
            
             
 
@@ -22,41 +54,6 @@ const  Login =()=>{
     <Link to='/register' className="lnk" > Register</Link> 
 </button>
 
-
-
-
-
-
-
-
-
-
-
-        {/* this needs to be refactored */}
-  {/*      <form className="form" onSubmit ={handleSubmit}>
-        
-        // <h1>Login</h1>
-        //   <label htmlFor="username"> username</label>
-        //     <div className="form-row">
-           
-        //     <input type='text' className='form-input' id='name'
-        //         value={name}
-        //         onChange={(e)=> setName(e.target.value)}
-        //     />     
-        //     </div>     <label htmlFor="email"> email</label>
-        //     <div className="form-row">
-           
-        //     <input type='text' className='form-input' id='email'
-        //         value={email}
-        //         onChange={(e)=> setEmail(e.target.value)}
-        //     />     
-        //     </div>
-         
-        //     <button type="">Login</button>
-            
-            
-        </form> */}
     </div>
     )
 }
-export default Login;

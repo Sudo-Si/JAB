@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import Home from './Home'
-// import Products from "./Products";
 const  About =()=>
 {
     return (
