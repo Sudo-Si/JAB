@@ -7,17 +7,23 @@ const  Register =()=>{
     const [username, setUsername]= useState('');
     const [email, setEmail]= useState('');
     const [password, setPassword]= useState('');
+    const [error, setError]= useState(false);
 
-    // const navigate = useNavigate();
+// const navigate = useNavigate();
 
     const handleSubmit = async (e) =>{
         e.preventDefault();
-        const res = await axios.post("/auth/register", {
+      try{  const res = await axios.post("/auth/register", {
             username, 
             email,
             password,
         });
-        console.log(res)
+        res.data && window.location.replace("/login")
+        }catch(err){ 
+            console.log(err);
+            setError(true)
+        }
+        // console.log(res)
     };
     return( 
     <div className="register"> 
@@ -38,10 +44,11 @@ const  Register =()=>{
             <input className="registerInput" type="password" placeholder='Password'  
              onChange={e=>setPassword(e.target.value)}/>
             <button className='registerButton' type="submit">Register</button>
-           
+            <div className='errMsg'> </div>
+           </form>
+           {error && <span className='spn'><em className='spn'>Something Went Wrong !</em></span>}
+           <button className="liRegisterButton">
             
-
-            </form> <button className="liRegisterButton">
     <Link to='/login' className="lnk" > Login</Link> 
 </button>
 

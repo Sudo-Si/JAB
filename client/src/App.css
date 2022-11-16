@@ -620,3 +620,7 @@ padding: 10px;
 color: white;
 border-radius: 10px;
 }
+.spn , .errMsg{
+
+   background-color: rgba(0, 0, 0, 0);
+}
