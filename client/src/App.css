@@ -394,6 +394,7 @@ cursor: pointer;
   border:none;
   padding :20px;
   width:70vh;
+  color: white;
 } 
 .writeInput:focus {
   outline:none;
