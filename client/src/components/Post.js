@@ -1,26 +1,24 @@
-// import React from 'react'
+
 import { Link } from 'react-router-dom'
-import programming from'../images/Programming.png'
-import post from "./Posts"
+
 
 
 export default function Post({post}) {
-  // console.log(posts.title)
+  const PF = "http://localhost:5000/images/";
   return (
     <div className='post'>
       {
         post.photo &&(
           <Link to={`/post/${post._id}`} className="lnk" >     
-       <img className='postImg' src={programming}  />
+       <img className='postImg' src={PF + post.photo}  />
        </Link>
         )
       }
-      {/* <h1>Hi Si</h1> */}
    
-
+   
       <div className="postInfo">
             <div className='postCats'>
-         {post.categories.map(c=>(
+         {post.categories.map((c)=>(
               <span className='postCat'>{c.name}</span>
             ))
             }
@@ -42,4 +40,3 @@ export default function Post({post}) {
   )
 }
  
-// postDate postTitle postInfo postImg post  postCats postCat

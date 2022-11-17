@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 
 
 export default function SinglePost() {
+  // const PF = "http://localhost:5000/images/";
   const location = new useLocation();
  const path = location.pathname.split("/")[2];
  const [post, setPost] = useState([])
@@ -22,7 +23,7 @@ export default function SinglePost() {
     <div classnaName="singlePost">
        <div className="singlePostWrapper">
         
-        {post.photo &&(<img className='singlePageImg' src={post.photo} alt=""/>)}
+        {post.photo &&(<img className='singlePageImg' src={ post.photo} alt=""/>)}
 
         <h1 className="singlePostTitle"> {post.title}</h1>
         <div className="singlePostEdit">  <i class="singlePostIcon fa-solid fa-pen-to-square"></i> <i class="singlePostIcon fa-solid fa-trash"></i></div>
