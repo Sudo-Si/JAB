@@ -27,7 +27,9 @@ const  Register =()=>{
     return( 
     <div className="register"> 
     <span className="registerTitle"> Register</span>
-             <form className='registerForm' onSubmit={handleSubmit}>
+             <form className='registerForm'
+            //   onSubmit={handleSubmit}
+             >
          
                 <label >  username</label>
             <input className="registerInput"
@@ -42,7 +44,11 @@ const  Register =()=>{
                 <label >  Password</label>
             <input className="registerInput" type="password" placeholder='Password'  
              onChange={e=>setPassword(e.target.value)}/>
-            <button className='registerButton' type="submit">Register</button>
+            <button className='registerButton' 
+            
+            type="submit"
+            
+            >Register</button>
             <div className='errMsg'> </div>
            </form>
            {error && <span className='spn'><em className='spn'>Something Went Wrong !</em></span>}

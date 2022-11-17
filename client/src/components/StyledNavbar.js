@@ -1,6 +1,7 @@
 import { NavLink , Link } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
+import Settings from "../pages/Settings";
 import simon from '../images/simon.png'
 
 import About from '../pages/About'
@@ -41,17 +42,20 @@ const  Navbar =()=>
             <div className="top-right">
                 {user ? (   
                
-                <> <img 
-                className="top-search-icon" 
+                <>
+                 <li  className="lnk" onClick={handleLogout} >{user && "Logout" }</li>
+
+                   <Link to='/settings' className="lnk" element={<Settings/>}>    <img className="top-search-icon" 
                 // src={simon} 
                 src={user.profilePic} 
-                alt=""/>
-                  <li  className="lnk" onClick={handleLogout} >{user && "Logout" }</li>
+                alt=""/></Link> 
+                
+                 
                 </>
                 ) :(
                     <>
                 <Link to='/login' className="lnk" element={<Login/>}>Login</Link> 
-                <Link to='/register' className="lnk" element={<Register/>}>Register</Link>   
+                {/* <Link to='/register' className="lnk" element={<Register/>}>Register</Link>    */}
                 </>
                 )}
              
