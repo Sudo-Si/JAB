@@ -73,36 +73,7 @@ export default function Write() {
       </button>
     </form>
   </div>
-//     <div>
-//       <div className='write'>
-// {file &&
-// <img src={URL.createObjectURL("file")} alt="" className='writeImg'/>
-// }
-    
-//         <form action="" className='writeForm' onSubmit={handleSubmit}>
-//             <div className='writeFormGroup'>
-              
-//                 <label htmlFor="fileInput">  
-//                     <i className="writeIcon fa-regular fa-plus"></i> 
-//                 </label>
-//                 <input type="file" id="fileInput" style={{display:"none"}} 
-//                 onChange={e=>setFile(e.target.files)} /> 
-//                 <input type="text" placeholder='Title' id="fileInput" className='writeInput' autoFocus={true} 
-//                  onChange={e=>setTitle(e.target.value)}/>
-//                 </div>
-//                 <div className='writeFormGroup'> 
-//                     <textarea 
-//                         type="text" 
-//                         placeholder='Whats the yarn?' 
-//                         id="fileInput" 
-//                         className='writeInput writeText'  
-//                     ></textarea>
-           
-           
-//             </div> <button className='writeSubmit' type='submit' > Publish</button>
-//         </form>
-//       </div>
-//       </div>
+//  
    
   )
 }
