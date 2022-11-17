@@ -307,6 +307,8 @@ flex:9;
 .singlePostWrapper{
   padding: 20px;
   padding-right: 0;
+  display:flex;
+  flex-direction: column;
 }
 .singlePageImg{
   width: 100%;
@@ -396,9 +398,31 @@ cursor: pointer;
   width:70vh;
   color: white;
 } 
-.writeInput:focus {
+.uWriteInput{
+  font-size: 30px;
+  margin:10px;
+  color: Grey;
+  border: none;
+  border-bottom: 1px solid lightgray;
+} 
+.uWriteInput:focus{
+outline: none;
+} 
+.uwriteInput:focus {
   outline:none;
 } 
+.usinglePostDesc:focus {
+  outline:none;
+} 
+.usinglePostDesc{
+  border: none;
+  font-size: 30px;
+  margin:10px;
+  color: Grey;
+  border: none;
+  /* border-bottom: 1px solid lightgray; */
+
+}
 .writeText{
   font-size: 20px;
   height: 100vh;
@@ -630,4 +654,16 @@ border-radius: 10px;
 .spn , .errMsg{
 font-weight: itli;
    background-color: rgba(0, 0, 0, 0);
+}
+/* writeInput */
+.singlePostButton{
+  border: none;
+  background-color: teal;
+  width:100px;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+  border-radius: 15px;
+  align-self: flex-end;
+  margin-top: 20px;
 }
