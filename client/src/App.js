@@ -1,4 +1,4 @@
-import{useState} from 'react'
+import{useContext, useState} from 'react'
 import { BrowserRouter, Routes, Route,Switch } from 'react-router-dom';
 import Home from './pages/Home'
 import Error from './pages/Error'
@@ -10,13 +10,12 @@ import Settings from './pages/Settings';
 import Register from './pages/Register';
 import Write from './components/Write';
 import About from './pages/About';  
-  import { ContextProvider } from './context/Context';
+  import { Context, ContextProvider } from './context/Context';
 import './App.css';
 function App() {
-  const user =false;
-  // const [user,setUser] =useState(null)
+  const {user }= useContext(Context);
   return (
- <ContextProvider> 
+
    <BrowserRouter>
       <Routes>
      <Route exact path='/' element={<SharedLayout />}>
@@ -33,7 +32,7 @@ function App() {
    </BrowserRouter>
       
 
-     </ContextProvider> 
+   
   );
 }
 
