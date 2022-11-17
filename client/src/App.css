@@ -67,6 +67,8 @@ margin: 3px;}
 
 .lnk{
   color: wheat;
+  list-style: none;
+  cursor: pointer;
 }
 .active{
   color: aqua;

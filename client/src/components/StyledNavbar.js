@@ -43,9 +43,10 @@ const  Navbar =()=>
                
                 <> <img 
                 className="top-search-icon" 
-                src={simon} 
+                // src={simon} 
+                src={user.profilePic} 
                 alt=""/>
-                  <li to='/login' className="lnk" onClick={handleLogout} >{user && "LOGOUT" }</li>
+                  <li  className="lnk" onClick={handleLogout} >{user && "Logout" }</li>
                 </>
                 ) :(
                     <>
