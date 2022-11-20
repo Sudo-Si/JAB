@@ -11,9 +11,13 @@ const path = require("path")
  dotenv.config();
  app.use(express.json());
  app.use("/images", express.static(path.join(__dirname, "/images")));
+
+
  mongoose.connect(process.env.MONGO_URL)
  .then(console.log("Connected to Mongo"))
  .catch((err)=>console.log(err));
+
+
  const storage = multer.diskStorage({
     destination:(req, file, cb)=>{
         cb(null, "images")
@@ -31,9 +35,15 @@ const path = require("path")
  app.use("/api/posts", postRoute);
  app.use("/api/categories", categoryRoute);
 
+ // Middleware to tell express that we are using dir as static folder
+app.use(express.static(path.join(__dirname, "/client/build")));
+//wheb pp get aby requests 
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+});
 
  const PORT =process.env.PORT;
 
-app.listen(PORT, ()=>{
+app.listen(PORT || 5000, ()=>{
     console.log("Backend is running on port "+ PORT)
 })
