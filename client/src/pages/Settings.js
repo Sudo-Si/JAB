@@ -1,5 +1,4 @@
-
-import { axiosInstance } from "../config";
+import axios from 'axios';
 import React, { useContext, useRef, useState } from 'react'
 import Sidebar from '../components/Sidebar'
 import { Context } from '../context/Context'
@@ -27,13 +26,13 @@ export default function settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axiosInstance.post("/upload", data);
+        await axios.post("/upload", data);
         setSuccess(true);
       } catch (err) {console("prob "+ err.Context)} 
     }
     try {
-    //  await axiosInstance.put("/users/", +user._id, updatedUser);
-     await axiosInstance.put(`/users/${user._id}`, updatedUser);
+    //  await axios.put("/users/", +user._id, updatedUser);
+     await axios.put(`/users/${user._id}`, updatedUser);
   
     } catch (err) {}
     console.log(user._id)
