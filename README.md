@@ -47,3 +47,31 @@ Copy code
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Working Demo 
+
+Home page 
+![image](https://user-images.githubusercontent.com/56238070/207737809-0c0ff678-b8ba-4c93-bdff-df61ba8f7da2.png)
+
+Posts components
+![image](https://user-images.githubusercontent.com/56238070/207737893-fc8cf524-6e95-4124-a78a-138dd6e47eef.png)
+
+About me Component 
+![image](https://user-images.githubusercontent.com/56238070/207738008-e643a01d-8260-4426-9981-79a9fe1ad2d7.png)
+
+Single Post 
+![image](https://user-images.githubusercontent.com/56238070/207738073-28a235fd-27c0-4bea-ac76-ce29ea0045c9.png)
+
+
+
+Login Page 
+![image](https://user-images.githubusercontent.com/56238070/207738161-33253663-91d0-4ba1-94f0-b47af4c2dfde.png)
+
+write section 
+![image](https://user-images.githubusercontent.com/56238070/207738210-60bea4e2-ce79-48f5-be81-7ace61dfa524.png)
+
+
+
+
+
+
