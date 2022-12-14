@@ -1,7 +1,7 @@
 
 # JAB (just another blog) MERN Blog App
 
-This is a full-stack web application built using the MERN stack (MongoDB, Express, React, and Node.js). It allows users to create, view, edit, and delete blog posts, as well as add comments, like posts, and follow other users.
+This is a full-stack web application built using the MERN stack (MongoDB, Express, React, and Node.js). It allows users to create, view, edit, and delete blog posts, as well as login and logout.
 
 ## Getting Started
 
